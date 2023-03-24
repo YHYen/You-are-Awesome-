@@ -36,12 +36,21 @@
                                     <action selector="messageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J54-kU-lmI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1D-0p-eqp">
+                                <rect key="frame" x="93.000000000000014" y="540" width="204.33333333333337" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show Another Message"/>
+                                <connections>
+                                    <action selector="anotherMessageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sAn-Pc-elw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FTl-OI-1Fi" secondAttribute="trailing" constant="69.329999999999998" id="562-av-Mw1"/>
-                            <constraint firstItem="FTl-OI-1Fi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="DNJ-YC-O9m"/>
+                            <constraint firstItem="Z1D-0p-eqp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="92.329999999999998" id="AtM-R0-KeJ"/>
+                            <constraint firstItem="FTl-OI-1Fi" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="DNJ-YC-O9m"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gZq-JQ-Dbl" secondAttribute="trailing" constant="121" id="GqK-Fd-Wdj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FTl-OI-1Fi" secondAttribute="bottom" priority="250" constant="313" id="Hg8-Ta-Gnh"/>
                             <constraint firstItem="FTl-OI-1Fi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69.329999999999998" id="ITR-6f-lke"/>
@@ -49,6 +58,9 @@
                             <constraint firstItem="gZq-JQ-Dbl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ioy-g5-FBO"/>
                             <constraint firstItem="gZq-JQ-Dbl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="Qpb-kU-4PA"/>
                             <constraint firstItem="gZq-JQ-Dbl" firstAttribute="top" secondItem="FTl-OI-1Fi" secondAttribute="bottom" constant="71.329999999999998" id="h1z-VU-Ywy"/>
+                            <constraint firstItem="Z1D-0p-eqp" firstAttribute="top" secondItem="gZq-JQ-Dbl" secondAttribute="bottom" constant="49" id="k9x-i8-iM9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Z1D-0p-eqp" secondAttribute="trailing" constant="92.329999999999998" id="rSI-P7-Ock"/>
+                            <constraint firstItem="Z1D-0p-eqp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xx1-7Y-svx"/>
                         </constraints>
                     </view>
                     <connections>
