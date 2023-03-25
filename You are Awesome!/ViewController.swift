@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    var messageIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,16 +21,15 @@ class ViewController: UIViewController {
 
     @IBAction func messageButtonPressed(_ sender: UIButton) {
         // print("The message button was pressed! 😎")
-        messageLabel.textAlignment = .left
-        if (messageLabel.text == "You Are Awesome!") {
-            messageLabel.text = "You pressed the button, Great!✌️"
-            messageLabel.textColor = UIColor.brown
-        } else {
-            messageLabel.text = "You Are Awesome!"
-            messageLabel.textColor = .systemPurple
-            messageLabel.textAlignment = .center
-            
+        
+        let messages = ["First Message", "You Are Awesome!", "You Are Great", "You Are Da Bomb", "Last Message"]
+        
+        messageLabel.text = messages[messageIndex]
+        messageIndex += 1
+        if messageIndex >= messages.count {
+            messageIndex = 0
         }
+        
         
         imageView.image = UIImage(named: "bird")
     }
