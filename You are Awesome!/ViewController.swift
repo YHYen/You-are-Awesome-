@@ -9,16 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         messageLabel.text = ""
-        print("viewDidLoad has run! 👍")
+        // print("viewDidLoad has run! 👍")
     }
 
 
     @IBAction func messageButtonPressed(_ sender: UIButton) {
-        //print("The message button was pressed! 😎")
+        // print("The message button was pressed! 😎")
         messageLabel.textAlignment = .left
         if (messageLabel.text == "You Are Awesome!") {
             messageLabel.text = "You pressed the button, Great!✌️"
@@ -29,6 +30,8 @@ class ViewController: UIViewController {
             messageLabel.textAlignment = .center
             
         }
+        
+        imageView.image = UIImage(named: "bird")
     }
     
     
@@ -36,6 +39,7 @@ class ViewController: UIViewController {
         messageLabel.text = "Another message."
         messageLabel.textColor = UIColor.green
         messageLabel.textAlignment = .right
+        imageView.image = UIImage(named: "earth")
     }
 }
 

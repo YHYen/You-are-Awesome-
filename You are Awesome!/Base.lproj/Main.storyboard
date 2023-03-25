@@ -44,6 +44,10 @@
                                     <action selector="anotherMessageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sAn-Pc-elw"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wq7-5V-sOn">
+                                <rect key="frame" x="16" y="56" width="358" height="234"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,6 +68,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="wq7-5V-sOn" id="sl8-6Y-bg0"/>
                         <outlet property="messageLabel" destination="FTl-OI-1Fi" id="0Bv-gD-gRM"/>
                     </connections>
                 </viewController>
