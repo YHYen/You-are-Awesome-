@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    var messageIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +21,11 @@ class ViewController: UIViewController {
     @IBAction func messageButtonPressed(_ sender: UIButton) {
         // print("The message button was pressed! 😎")
         
-        let messages = ["First Message", "You Are Awesome!", "You Are Great", "You Are Da Bomb", "Last Message"]
+        let messages = ["First Message", "You Are Awesome!", "You Are Great, I need more message", "You Are Da Bomb", "Last Message"]
+        let messageIndex = Int.random(in: 0...messages.count - 1)
         
         messageLabel.text = messages[messageIndex]
-        messageIndex += 1
-        if messageIndex >= messages.count {
-            messageIndex = 0
-        }
+        
         
         
         imageView.image = UIImage(named: "bird")
