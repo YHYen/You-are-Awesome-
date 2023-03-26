@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     var messageIndex = -1
+    var soundNumber = -1
+    var totalSoundsNumber = 3
     var audioPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
@@ -20,34 +22,12 @@ class ViewController: UIViewController {
         messageLabel.text = ""
         // print("viewDidLoad has run! 👍")
     }
-
-
-    @IBAction func messageButtonPressed(_ sender: UIButton) {
-        // print("The message button was pressed! 😎")
-        
-        // set messages array
-        let messages = ["First Message", "You Are Awesome!", "You Are Great, I need more message", "You Are Da Bomb", "Last Message"]
-        
-        // set messageIndex to traversal the messages array
-        var newMessageIndex: Int
-        
-        // choose random message and use repeat(do-while) to avoid the same message show again
-        repeat {
-            newMessageIndex = Int.random(in: 0...messages.count - 1)
-        } while newMessageIndex == messageIndex
-        
-        // set newMessageIndex to messageIndex
-        messageIndex = newMessageIndex
-        
-        // set message on messageLabel
-        messageLabel.text = messages[messageIndex]
-        
-        // set image on imageView
-        imageView.image = UIImage(named: "bird")
-        
+    
+    
+    func playSound(soundName: String) {
         // set sound when button clicked
         // set sound data from assets package
-        if let sound = NSDataAsset(name: "sound0") {
+        if let sound = NSDataAsset(name: soundName) {
             // if not nil, create sound
             do {
                 try audioPlayer = AVAudioPlayer(data: sound.data)
@@ -59,6 +39,38 @@ class ViewController: UIViewController {
             // if nil print error message, could not read data from file sound0
             print("ERROR: file \("sound0") did not load.")
         }
+    }
+    
+    
+    func noRepeatRandomData(dataLength: Int, index: Int) -> Int {
+        var newIndex: Int
+        repeat {
+            newIndex = Int.random(in: 0...dataLength)
+        } while newIndex == index
+        
+        return newIndex
+    }
+
+
+    @IBAction func messageButtonPressed(_ sender: UIButton) {
+        // print("The message button was pressed! 😎")
+        
+        // set messages array
+        let messages = ["First Message", "You Are Awesome!", "You Are Great, I need more message", "You Are Da Bomb", "Last Message"]
+        // use noRepeatRandomData function to random data in messages array
+        messageIndex = noRepeatRandomData(dataLength: messages.count - 1, index: messageIndex)
+        // set message on messageLabel
+        messageLabel.text = messages[messageIndex]
+        
+        
+        // set image on imageView
+        imageView.image = UIImage(named: "bird")
+        
+        
+        // use noRepeatRandomData function to random sounds file
+        soundNumber = noRepeatRandomData(dataLength: totalSoundsNumber, index: soundNumber)
+        // use playSound() function to play sound
+        playSound(soundName: "sound\(soundNumber)")
     }
     
     
