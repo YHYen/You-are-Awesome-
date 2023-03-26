@@ -10,6 +10,7 @@ import AVFoundation
 
 class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var playSoundSwitch: UISwitch!
     @IBOutlet weak var imageView: UIImageView!
     
     var messageIndex = -1
@@ -70,7 +71,10 @@ class ViewController: UIViewController {
         // use noRepeatRandomData function to random sounds file
         soundNumber = noRepeatRandomData(dataLength: totalSoundsNumber, index: soundNumber)
         // use playSound() function to play sound
-        playSound(soundName: "sound\(soundNumber)")
+        if playSoundSwitch.isOn {
+            playSound(soundName: "sound\(soundNumber)")
+        }
+        
     }
     
     
@@ -79,6 +83,14 @@ class ViewController: UIViewController {
         messageLabel.textColor = UIColor.green
         messageLabel.textAlignment = .right
         imageView.image = UIImage(named: "earth")
+    }
+    
+    
+    
+    @IBAction func playSoundToggled(_ sender: UISwitch) {
+        if !sender.isOn && audioPlayer != nil {
+            audioPlayer.stop()
+        }
     }
 }
 

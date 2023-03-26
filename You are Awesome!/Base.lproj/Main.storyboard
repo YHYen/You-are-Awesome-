@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZq-JQ-Dbl">
-                                <rect key="frame" x="121" y="456" width="148" height="35"/>
+                                <rect key="frame" x="121" y="456" width="148" height="34.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="148" id="xVx-kI-2X8"/>
                                 </constraints>
@@ -36,8 +36,8 @@
                                     <action selector="messageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J54-kU-lmI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1D-0p-eqp">
-                                <rect key="frame" x="92.333333333333329" y="540" width="205.33333333333337" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1D-0p-eqp">
+                                <rect key="frame" x="92.333333333333329" y="539.33333333333337" width="205.33333333333337" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Show Another Message"/>
                                 <connections>
@@ -51,12 +51,30 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="234" id="yhS-m9-bej"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="U8n-kg-aNr">
+                                <rect key="frame" x="16" y="625" width="172" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Sound: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIe-qr-MgH">
+                                        <rect key="frame" x="0.0" y="0.0" width="108" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zE-CT-5QB">
+                                        <rect key="frame" x="123" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="playSoundToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="Tal-eA-pdD"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wq7-5V-sOn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3oQ-Jc-bL3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="FTl-OI-1Fi" secondAttribute="trailing" constant="69.329999999999998" id="562-av-Mw1"/>
+                            <constraint firstItem="U8n-kg-aNr" firstAttribute="leading" secondItem="wq7-5V-sOn" secondAttribute="leading" id="9D6-UP-l8j"/>
                             <constraint firstItem="Z1D-0p-eqp" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="92.329999999999998" id="AtM-R0-KeJ"/>
                             <constraint firstItem="FTl-OI-1Fi" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="DNJ-YC-O9m"/>
                             <constraint firstItem="wq7-5V-sOn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="E47-bS-fuC"/>
@@ -66,7 +84,10 @@
                             <constraint firstItem="FTl-OI-1Fi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IiE-3S-Fhf"/>
                             <constraint firstItem="gZq-JQ-Dbl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ioy-g5-FBO"/>
                             <constraint firstItem="gZq-JQ-Dbl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="Qpb-kU-4PA"/>
+                            <constraint firstItem="U8n-kg-aNr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WdL-oG-Tk5"/>
                             <constraint firstItem="wq7-5V-sOn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="9" id="ZXW-Dq-Q0l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U8n-kg-aNr" secondAttribute="bottom" constant="154" id="ZrQ-7l-yxv"/>
+                            <constraint firstItem="U8n-kg-aNr" firstAttribute="top" secondItem="Z1D-0p-eqp" secondAttribute="bottom" constant="51.333333333333371" id="dRf-HF-taD"/>
                             <constraint firstItem="gZq-JQ-Dbl" firstAttribute="top" secondItem="FTl-OI-1Fi" secondAttribute="bottom" constant="71.329999999999998" id="h1z-VU-Ywy"/>
                             <constraint firstItem="Z1D-0p-eqp" firstAttribute="top" secondItem="gZq-JQ-Dbl" secondAttribute="bottom" constant="49" id="k9x-i8-iM9"/>
                             <constraint firstItem="FTl-OI-1Fi" firstAttribute="top" secondItem="wq7-5V-sOn" secondAttribute="bottom" constant="57" id="lYT-h1-810"/>
@@ -78,6 +99,7 @@
                     <connections>
                         <outlet property="imageView" destination="wq7-5V-sOn" id="sl8-6Y-bg0"/>
                         <outlet property="messageLabel" destination="FTl-OI-1Fi" id="0Bv-gD-gRM"/>
+                        <outlet property="playSoundSwitch" destination="7zE-CT-5QB" id="AbB-9F-cFb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
