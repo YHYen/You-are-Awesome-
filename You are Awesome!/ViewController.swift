@@ -63,6 +63,9 @@ class ViewController: UIViewController {
         // set message on messageLabel
         messageLabel.text = messages[messageIndex]
         
+        // set message alignment to center
+        messageLabel.textAlignment = .center
+        
         
         // set image on imageView
         imageView.image = UIImage(named: "bird")
